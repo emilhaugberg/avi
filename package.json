@@ -1,0 +1,25 @@
+{
+  "name": "avi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+"     build": "./node_modules/.bin/webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emilhaugberg/avi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emilhaugberg/avi/issues"
+  },
+  "homepage": "https://github.com/emilhaugberg/avi#readme",
+  "dependencies": {
+    "animejs": "^2.2.0",
+    "webpack": "^4.28.1",
+    "webpack-cli": "^3.2.1"
+  }
+}
