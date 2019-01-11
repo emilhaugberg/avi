@@ -22,22 +22,23 @@ var state = {
   cursIndex: 0
 }
 
+/* Initializes the terminal and focuses the cursor on load. */
 function initialize() {
-  // term.toggleFullScreen(true);
   term.open(document.getElementById("terminal"));
-  // term.fit();
 
   writeText(commands.hello);
   term.write("$> ")
   term.focus();
 }
 
+/* Writes text to the terminal. */
 function writeText(string) {
   string.split("\n").forEach((str) => {
     term.writeln(str)
   })
 }
 
+/* Called when a user presses enter. */
 function enterPress() {
   term.writeln("");
   var currCommand = state.command.toLowerCase()
@@ -53,6 +54,7 @@ function enterPress() {
   state.cursIndex = 0;
 }
 
+/* Called when a user presses backspace. */
 function backspacePress() {
   if (state.cursIndex > 0) {
     term.write("\b \b");
