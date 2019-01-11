@@ -1,1 +1,0 @@
-var anime = require('animejs');

@@ -1,27 +1,29 @@
 {
-  "name": "avi",
+  "name": "terminal-thingy",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build && ./node_modules/.bin/webpack-dev-server --content-base src --hot --inline",
-    "build": "./node_modules/.bin/webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run build && ./node_modules/.bin/webpack-dev-server --content-base dst --hot --inline",
+    "build": "./node_modules/.bin/tsc src/main.ts && ./node_modules/.bin/webpack"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/emilhaugberg/avi.git"
+    "url": "git+https://github.com/emilhaugberg/terminal-thingy.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/emilhaugberg/avi/issues"
+    "url": "https://github.com/emilhaugberg/terminal-thingy/issues"
   },
-  "homepage": "https://github.com/emilhaugberg/avi#readme",
+  "homepage": "https://github.com/emilhaugberg/terminal-thingy#readme",
   "dependencies": {
-    "animejs": "^2.2.0",
-    "webpack": "^4.28.1",
-    "webpack-cli": "^3.2.1",
-    "webpack-dev-server": "^3.1.14"
+    "typescript": "^3.2.2",
+    "webpack": "^4.28.4",
+    "webpack-dev-server": "^3.1.14",
+    "xterm": "^3.10.1"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.2.1"
   }
 }
