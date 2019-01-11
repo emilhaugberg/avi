@@ -9,7 +9,8 @@ const terminalHtml = document.getElementById("terminal");
 
 const commands = {
   "help": command.help,
-  "invalid": command.invalid
+  "invalid": command.invalid,
+  "hello": command.hello
 }
 
 function writeText(string) {
@@ -25,15 +26,27 @@ var state = {
 }
 
 term.open(terminalHtml);
-term.write(state.line);
+writeText(commands.hello);
+term.write("$> ")
+term.focus();
 
 /* Typing. */
 term.on('key', (key, ev) => {
+  if (ev.keyCode >= 37 && ev.keyCode <= 40) {
+    ev.preventDefault();
+    return;
+  }
+
   if (ev.keyCode == ENTER) {
     term.writeln("");
+    var currCommand = state.command.toLowerCase()
+    if (currCommand == "clear") {
+      term.clear();
+    } else {
+      var message = !commands[currCommand] ? commands.invalid : commands[currCommand];
+      writeText(message);
+    }
 
-    var message = !commands[state.command] ? commands.invalid : commands[state.command];
-    writeText(message);
     state.command="";
     term.write("$> ")
     state.cursIndex = 0;
@@ -45,7 +58,6 @@ term.on('key', (key, ev) => {
     }
   } else {
     state.command = state.command.concat(key);
-    state.line = state.line.concat(key);
     state.cursIndex++
     term.write(key)
   }

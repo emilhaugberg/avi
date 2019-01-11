@@ -21,7 +21,8 @@ var state = {
     cursIndex: 0
 };
 term.open(terminalHtml);
-term.write(state.line);
+writeText(commands.hello);
+writeText(state.line);
 /* Typing. */
 term.on('key', function (key, ev) {
     if (ev.keyCode == ENTER) {
