@@ -1,12 +1,8 @@
 import { Terminal } from 'xterm';
-import * as fullscreen from 'xterm/lib/addons/fullscreen/fullscreen';
-import * as fit from 'xterm/lib/addons/fit/fit';
 import * as command from './commands';
 
 const ENTER = 13;
 const BACKSPACE = 8;
-
-Terminal.applyAddon(fullscreen);
 
 let term = new Terminal();
 
@@ -25,7 +21,6 @@ var state = {
 /* Initializes the terminal and focuses the cursor on load. */
 function initialize() {
   term.open(document.getElementById("terminal"));
-
   writeText(commands.hello);
   term.write("$> ")
   term.focus();
