@@ -23,6 +23,7 @@
     "xterm": "^3.10.1"
   },
   "devDependencies": {
+    "json-loader": "^0.5.7",
     "ts-loader": "^5.3.3",
     "webpack-cli": "^3.2.1",
     "webpack-dev-server": "^3.1.14"

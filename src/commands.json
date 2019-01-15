@@ -1,0 +1,19 @@
+{
+  "help": {
+    "default": "List of possible flags are\n- help\n- nlp\n- uva\n- voorbeelden\n- visie\n- toekomst\n- kader\n\nType help --<flag> for more information.",
+    "flags": {
+      "nlp": "nlp shizzle",
+      "uva": "testflag",
+      "voorbeelden": "testflag",
+      "visie": "testflag",
+      "toekomst": "testflag",
+      "kader": "testflag"
+    }
+  },
+  "invalid": {
+    "default": "This contains an invalid command or flag. Type help for more information.\n"
+  },
+  "hello": {
+    "default": "Welkom bij de AVI terminal!\nIn deze terminal kan je vragen stellen m.b.v commando's.\n"
+  }
+}

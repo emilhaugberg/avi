@@ -1,16 +1,10 @@
 import { Terminal } from 'xterm';
-import * as command from './commands';
+import * as commands from './commands.json';
 
 const ENTER = 13;
 const BACKSPACE = 8;
 
 let term = new Terminal();
-
-const commands = {
-  "help": command.help,
-  "invalid": command.invalid,
-  "hello": command.hello
-}
 
 var state = {
   command: "",
@@ -18,19 +12,70 @@ var state = {
   cursIndex: 0
 }
 
+/* Nasty hack. */
+function animated_intro(text) {
+  var i = 0;
+
+  setTimeout(function f(){
+    if (i >= text.length) {
+      term.write("$> ")
+      term.focus();
+      return;
+    }
+
+    if (text.charAt(i) == "\n") {
+      term.writeln("");
+    } else {
+      term.write(text.charAt(i));
+    }
+
+    i++
+
+    setTimeout(f, 25);
+  }, 25);
+}
+
 /* Initializes the terminal and focuses the cursor on load. */
 function initialize() {
   term.open(document.getElementById("terminal"));
-  writeText(commands.hello);
-  term.write("$> ")
-  term.focus();
+  animated_intro((<any>commands).hello.default);
 }
 
 /* Writes text to the terminal. */
-function writeText(string) {
-  string.split("\n").forEach((str) => {
-    term.writeln(str)
+function writeText(command) {
+  var fl = getFlags(command);
+
+  var c = command.split(" ")[0];
+  if (!(<any>commands).default[c]) {
+    term.writeln(commands["invalid"]["default"]);
+    return;
+  }
+
+  var allowedFlags = Object.keys((<any>commands).default[c]["flags"]);
+
+  fl.forEach(function(flag) {
+    if (allowedFlags.indexOf(flag) == -1) {
+      term.writeln(commands["invalid"]["default"]);
+      return;
+    }
   })
+
+  fl.forEach(function(flag) {
+    term.writeln(commands["default"][c]["flags"][flag]);
+  })
+}
+
+function getFlags(str) {
+  var reg = /(--([a-zA-Z0-9]+)*)/g
+  var flags = []
+  var match = reg.exec(str);
+
+  while (match != null) {
+    flags.push(match[0].substring(2));
+    match = reg.exec(str);
+  }
+
+  return flags;
 }
 
 /* Called when a user presses enter. */
@@ -40,8 +85,7 @@ function enterPress() {
   if (currCommand == "clear") {
     term.clear();
   } else {
-    var message = !commands[currCommand] ? commands.invalid : commands[currCommand];
-    writeText(message);
+    writeText(currCommand);
   }
 
   state.command="";
