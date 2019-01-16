@@ -1,8 +1,10 @@
 import { Terminal } from 'xterm';
 import * as commands from './commands.json';
 import * as fullscreen from 'xterm/lib/addons/fullscreen/fullscreen';
+import * as fit from 'xterm/lib/addons/fit/fit';
 
 Terminal.applyAddon(fullscreen);
+Terminal.applyAddon(fit);
 
 const ENTER = 13;
 const BACKSPACE = 8;
@@ -41,7 +43,10 @@ function animated_intro(text) {
 /* Initializes the terminal and focuses the cursor on load. */
 function initialize() {
   term.open(document.getElementById("terminal"));
-  fullscreen.toggleFullScreen(term);
+  console.log(term['_core']);
+  console.log(fullscreen)
+  fullscreen.toggleFullScreen(term, true);
+  fit.fit(term)
   animated_intro((<any>commands).hello.default);
 }
 
