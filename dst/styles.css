@@ -12,3 +12,7 @@ html, body {
   height: 100vh;
   padding: 20px;
 }
+
+.xterm-screen {
+  width: 1024px !important;
+}

@@ -1,5 +1,8 @@
 import { Terminal } from 'xterm';
 import * as commands from './commands.json';
+import * as fullscreen from 'xterm/lib/addons/fullscreen/fullscreen';
+
+Terminal.applyAddon(fullscreen);
 
 const ENTER = 13;
 const BACKSPACE = 8;
@@ -38,6 +41,7 @@ function animated_intro(text) {
 /* Initializes the terminal and focuses the cursor on load. */
 function initialize() {
   term.open(document.getElementById("terminal"));
+  fullscreen.toggleFullScreen(term);
   animated_intro((<any>commands).hello.default);
 }
 
@@ -48,6 +52,15 @@ function writeText(command) {
   var c = command.split(" ")[0];
   if (!(<any>commands).default[c]) {
     term.writeln(commands["invalid"]["default"]);
+    return;
+  }
+
+  if (fl.length == 0) {
+    var text = (<any>commands).default[c]["default"];
+
+    text.split("\n").forEach(function(line) {
+      term.writeln(line);
+    });
     return;
   }
 
