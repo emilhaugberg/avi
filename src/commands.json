@@ -1,32 +1,32 @@
 {
   "help": {
-    "default": "Lijst van mogelijke opties zijn\n- help\n- nlp\n- uva\n- voorbeelden\n- visie\n- toekomst\n- kader\n\nType help --<commando> voor meer informatie.",
+    "default": "Lijst van mogelijke opties zijn\n- help\n- nlp\n- uva\n- voorbeelden\n- visie\n- toekomst\n- kader\n\nTyp help --<commando> voor meer informatie.",
     "flags": {
-      "help": "Geeft een lijst van alle mogelijke commando's. Type \"help\" voor meer informatie",
-      "nlp": "Geeft meer informatie over NLP. Type \"nlp\" voor meer informatie.",
-      "uva": "Geeft meer informatie over NLP onderzoek aan de UvA. Type \"uva\" voor meer informatie.",
-      "voorbeelden": "Geeft voorbeelden van onderzoeken binnen NLP. Type \"voorbeelden\" voor meer informatie.",
-      "visie": "Geeft meer informatie over onze visie aangaande onderzoek binnen de informatica. Type \"visie\" voor meer informatie.",
-      "toekomst": "Geeft onze kijk op NLP in de toekomst. Type \"toekomst\" voor meer informatie.",
-      "kader": "Geeft meer informatie over hoe NLP in het kader van de informatica past. Type \"kader\" voor meer informatie."
+      "help": "Geeft een lijst van alle mogelijke commando's. Typ \"help\" voor meer informatie",
+      "nlp": "Geeft meer informatie over NLP. Typ \"nlp\" voor meer informatie.",
+      "uva": "Geeft meer informatie over NLP onderzoek aan de UvA. Typ \"uva\" voor meer informatie.",
+      "voorbeelden": "Geeft voorbeelden van onderzoeken binnen NLP. Typ \"voorbeelden\" voor meer informatie.",
+      "visie": "Geeft meer informatie over onze visie aangaande onderzoek binnen de informatica. Typ \"visie\" voor meer informatie.",
+      "toekomst": "Geeft onze kijk op NLP in de toekomst. Typ \"toekomst\" voor meer informatie.",
+      "kader": "Geeft meer informatie over hoe NLP in het kader van de informatica past. Typ \"kader\" voor meer informatie."
     }
   },
   "nlp": {
-    "default": "Lijst van mogelijke opties zijn\n--ki\n--interactie\n\nType nlp --<optie> voor meer informatie.",
+    "default": "Lijst van mogelijke opties is\n--ki\n--interactie\n\nTyp nlp --<optie> voor meer informatie.",
     "flags": {
       "ki": "Hier komt iets te staan over KI",
       "interactie": "Hier komt iets te staan over interactie"
     }
   },
   "uva": {
-    "default": "Lijst van mogelijke opties zijn\n--onderzoeken\n--onderzoeksgroepen\n\nType uva --<optie> voor meer informatie.",
+    "default": "Lijst van mogelijke opties is\n--onderzoeken\n--onderzoeksgroepen\n\nTyp uva --<optie> voor meer informatie.",
     "flags": {
       "onderzoeken": "Hier komt iets te staan over onderzoeken",
       "onderzoeksgroepen": "Hier komt iets te staan over onderzoeksgroepen"
     }
   },
   "voorbeelden": {
-    "default": "Lijst van mogelijke opties zijn\n--bots\n--spraak\n--taal\n--zoekmachines\n\nType voorbeelden --<optie> voor meer informatie.",
+    "default": "Lijst van mogelijke opties is\n--bots\n--spraak\n--taal\n--zoekmachines\n\nTyp voorbeelden --<optie> voor meer informatie.",
     "flags": {
       "bots": "Hier komt iets te staan over bots",
       "spraak": "Hier komt iets te staan over spraak",
@@ -35,7 +35,7 @@
     }
   },
   "visie": {
-    "default": "Lijst van mogelijke opties zijn\n--jorik\n--florine\n--emil\n--renee\n\nType visie --<optie> voor meer informatie.",
+    "default": "Lijst van mogelijke opties is\n--jorik\n--florine\n--emil\n--renee\n\nTyp visie --<optie> voor meer informatie.",
     "flags": {
       "emil": "Hier komt emil's visie",
       "jorik": "Hier komt jorik's visie",
@@ -44,16 +44,16 @@
     }
   },
   "kader": {
-    "default": "Lijst van mogelijke opties zijn\n--maatschappelijk\n--wetenschappelijk\n\nType kader --<optie> voor meer informatie.",
+    "default": "Lijst van mogelijke opties is\n--maatschappelijk\n--wetenschappelijk\n\nTyp kader --<optie> voor meer informatie.",
     "flags": {
       "maatschappelijk": "Hier komt iets over maatschappelijk kader",
       "wetenschappelijk": "Hier komt iets over wetenschappelijk kader"
     }
   },
   "invalid": {
-    "default": "Dit commando is ongeldig of bevat ongeldige opties. Probeer opnieuw of type \"help\"."
+    "default": "Dit commando is ongeldig of bevat ongeldige opties. Probeer opnieuw of Typ \"help\"."
   },
   "hello": {
-    "default": "Welkom bij de AVI terminal!\nIn deze terminal kan je vragen stellen m.b.v commando's. Om een overzicht van alle commando's te krijgen, type \"help\"\n"
+    "default": "Welkom bij de AVI terminal!\nIn deze terminal kan je vragen stellen m.b.v commando's. Om een overzicht van alle commando's te krijgen, typ \"help\"\n"
   }
 }
