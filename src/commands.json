@@ -1,6 +1,6 @@
 {
   "help": {
-    "default": "Lijst van mogelijke opties zijn\n--help\n--nlp\n--uva\n--voorbeelden\n--visie\n--toekomst\n--kader\n\nType help --<optie> voor meer informatie.",
+    "default": "Lijst van mogelijke opties zijn\n- help\n- nlp\n- uva\n- voorbeelden\n- visie\n- toekomst\n- kader\n\nType help --<commando> voor meer informatie.",
     "flags": {
       "help": "Geeft een lijst van alle mogelijke commando's. Type \"help\" voor meer informatie",
       "nlp": "Geeft meer informatie over NLP. Type \"nlp\" voor meer informatie.",
@@ -49,6 +49,9 @@
       "maatschappelijk": "Hier komt iets over maatschappelijk kader",
       "wetenschappelijk": "Hier komt iets over wetenschappelijk kader"
     }
+  },
+  "invalid": {
+    "default": "Dit commando is ongeldig of bevat ongeldige opties. Probeer opnieuw of type \"help\"."
   },
   "hello": {
     "default": "Welkom bij de AVI terminal!\nIn deze terminal kan je vragen stellen m.b.v commando's. Om een overzicht van alle commando's te krijgen, type \"help\"\n"

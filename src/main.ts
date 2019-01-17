@@ -43,8 +43,6 @@ function animated_intro(text) {
 /* Initializes the terminal and focuses the cursor on load. */
 function initialize() {
   term.open(document.getElementById("terminal"));
-  console.log(term['_core']);
-  console.log(fullscreen)
   fullscreen.toggleFullScreen(term, true);
   fit.fit(term)
   animated_intro((<any>commands).hello.default);
@@ -71,12 +69,18 @@ function writeText(command) {
 
   var allowedFlags = Object.keys((<any>commands).default[c]["flags"]);
 
+  var illegal_flag = false;
   fl.forEach(function(flag) {
     if (allowedFlags.indexOf(flag) == -1) {
+      illegal_flag = true;
       term.writeln(commands["invalid"]["default"]);
       return;
     }
   })
+
+  if (illegal_flag) {
+    return;
+  }
 
   fl.forEach(function(flag) {
     term.writeln(commands["default"][c]["flags"][flag]);
