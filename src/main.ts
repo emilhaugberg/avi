@@ -83,7 +83,11 @@ function writeText(command) {
   }
 
   fl.forEach(function(flag) {
-    term.writeln(commands["default"][c]["flags"][flag]);
+    var text = commands["default"][c]["flags"][flag];
+
+    text.split("\n").forEach(function(line) {
+      term.writeln(line);
+    });
   })
 }
 
