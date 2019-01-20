@@ -62,7 +62,7 @@ function writeText(command) {
     var text = (<any>commands).default[c]["default"];
 
     text.split("\n").forEach(function(line) {
-      term.write(wordWrap(line, 300));
+      term.writeln(line);
     });
     return;
   }
@@ -86,7 +86,7 @@ function writeText(command) {
     var text = commands["default"][c]["flags"][flag];
 
     text.split("\n").forEach(function(line) {
-      term.writeln(wordWrap(line, 100));
+      term.writeln(line);
     });
   })
 }
@@ -115,7 +115,7 @@ function enterPress() {
   }
 
   state.command="";
-  term.writeln("$> ")
+  term.write("$> ")
   state.cursIndex = 0;
 }
 
