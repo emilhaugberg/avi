@@ -1,22 +1,14 @@
 {
   "help": {
-    "default": "Lijst van mogelijke commando's zijn\n\n- help\n- nlp\n- uva\n- voorbeelden\n- visie\n- toekomst\n- kader\n- clear\n\nTyp help --<commando> voor meer informatie.",
+    "default": "Lijst van mogelijke commando's zijn\n\n- help\n- uva\n- voorbeelden\n- visie\n- toekomst\n- kader\n- clear\n\nTyp help --<commando> voor meer informatie.",
     "flags": {
       "help": "Geeft een lijst van alle mogelijke commando's. Typ \"help\" voor meer informatie",
-      "nlp": "Geeft meer informatie over NLP. Typ \"nlp\" voor meer informatie.",
       "uva": "Geeft meer informatie over NLP onderzoek aan de UvA. Typ \"uva\" voor meer informatie.",
       "voorbeelden": "Geeft voorbeelden van onderzoeken binnen NLP. Typ \"voorbeelden\" voor meer informatie.",
       "visie": "Geeft meer informatie over onze visie aangaande onderzoek binnen de informatica. Typ \"visie\" voor meer informatie.",
       "toekomst": "Geeft onze kijk op NLP in de toekomst. Typ \"toekomst\" voor meer informatie.",
       "kader": "Geeft meer informatie over hoe NLP in het kader van de informatica past. Typ \"kader\" voor meer informatie.",
       "clear": "Maakt het scherm leeg."
-    }
-  },
-  "nlp": {
-    "default": "lijst van mogelijke opties is\n\n--ki\n--interactie\n\nTyp nlp --<optie> voor meer informatie.",
-    "flags": {
-      "ki": "Hier komt iets te staan over KI",
-      "interactie": "Hier komt iets te staan over interactie"
     }
   },
   "uva": {
