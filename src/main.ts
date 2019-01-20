@@ -62,7 +62,7 @@ function writeText(command) {
     var text = (<any>commands).default[c]["default"];
 
     text.split("\n").forEach(function(line) {
-      term.writeln(line);
+      term.writeln(wordWrap(line, 100));
     });
     return;
   }
@@ -86,7 +86,7 @@ function writeText(command) {
     var text = commands["default"][c]["flags"][flag];
 
     text.split("\n").forEach(function(line) {
-      term.writeln(line);
+      term.writeln(wordWrap(line, 100));
     });
   })
 }
@@ -146,5 +146,36 @@ term.on('key', (key, ev) => {
     term.write(key)
   }
 });
+
+function wordWrap(str, maxWidth) {
+  var newLineStr = "\r\n";
+  var done = false;
+  var res = '';
+  do {
+      var found = false;
+      for (var i = maxWidth - 1; i >= 0; i--) {
+           if (testWhite(str.charAt(i))) {
+              res += [str.slice(0, i), newLineStr].join('');
+              str = str.slice(i + 1);
+              found = true;
+              break;
+          }
+      }
+      if (!found) {
+          res += [str.slice(0, maxWidth), newLineStr].join('');
+          str = str.slice(maxWidth);
+      }
+
+      if (str.length < maxWidth)
+          done = true;
+  } while (!done);
+
+  return res + str;
+}
+
+function testWhite(x) {
+  var white = new RegExp(/^\s$/);
+  return white.test(x.charAt(0));
+};
 
 initialize();

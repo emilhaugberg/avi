@@ -1,6 +1,6 @@
 {
   "help": {
-    "default": "Lijst van mogelijke commando's zijn\n\n- help\n- nlp\n- uva\n- voorbeelden\n- visie\n- toekomst\n- kader\n- clear\n\nTyp help --<commando> voor meer informatie.",
+    "default": "Lijst van mogelijke commando's zijn:\n\n-help\n-nlp\n-uva\n-voorbeelden\n-visie\n-toekomst\n-kader\n-clear\n\nTyp help --<commando> voor meer informatie.",
     "flags": {
       "help": "Geeft een lijst van alle mogelijke commando's. Typ \"help\" voor meer informatie",
       "nlp": "Geeft meer informatie over NLP. Typ \"nlp\" voor meer informatie.",
